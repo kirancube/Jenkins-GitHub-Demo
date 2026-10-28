@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab5-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab5-calculator
+  template:
+    metadata:
+      labels:
+        app: lab5-calculator
+    spec:
+      containers:
+        - name: calculator
+          image: lab5-java-webapp:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8081
