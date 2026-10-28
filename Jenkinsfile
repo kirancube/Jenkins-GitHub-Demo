@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -43,6 +42,12 @@ pipeline {
                     archiveArtifacts artifacts: 'target/*.jar',
                                      fingerprint: true
                 }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t lab5-java-webapp:1.0 .'
             }
         }
     }
