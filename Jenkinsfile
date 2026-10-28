@@ -47,7 +47,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat 'docker build -t lab5-java-webapp:1.0 .'
+                bat '"C:/Users/kiran/AppData/Local/Programs/DockerDesktop/resources/bin/docker.exe" build -t lab5-java-webapp:1.0 .'
             }
         }
     }
